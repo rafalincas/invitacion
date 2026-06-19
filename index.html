@@ -98,7 +98,11 @@ publicKey: "PbXYYbT7WoSVeB7ej",
 <script>
 
 document.getElementById("si").onclick = function(){
-
+confetti({
+  particleCount: 250,
+  spread: 180,
+  origin: { y: 0.6 }
+});
 emailjs.send(
 "service_v4o2jhw",
 "template_2bxukc8",
