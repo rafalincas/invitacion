@@ -98,8 +98,6 @@ publicKey: "PbXYYbT7WoSVeB7ej",
 <script>
 
 document.getElementById("si").onclick = function(){
-
-alert("Botón Sí funcionando");
     
 if (typeof confetti === "function") {
   confetti({
@@ -119,14 +117,49 @@ email: "acepto@invitacion.com"
 
 document.body.innerHTML = `
 
-<div style="margin-top:100px;text-align:center;">
+<div style="text-align:center;padding-top:40px;">
 <h1>🎉 ¡SIIII! 🎉</h1>
-<h2>Gracias por aceptar ❤️</h2>
-<div style="font-size:100px;">🐱❤️🐱</div>
-<p>Prometo que será una salida divertida 😎</p>
+
+<h2>Gracias por aceptar, Esperanza ❤️</h2>
+
+<img src="https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif" width="250">
+
+<p style="font-size:24px;">
+Los gatitos están celebrando 🐱💖
+</p>
+
 <p>📧 ¡Ya le avisé a Rafael!</p>
+
+<div id="lluvia" style="font-size:40px;"></div>
 </div>
 `;
+
+setInterval(()=>{
+const corazon=document.createElement("div");
+corazon.innerHTML="❤️";
+corazon.style.position="fixed";
+corazon.style.left=Math.random()*100+"vw";
+corazon.style.top="-50px";
+corazon.style.fontSize="40px";
+corazon.style.zIndex="9999";
+document.body.appendChild(corazon);
+
+```
+let y=-50;
+
+const bajar=setInterval(()=>{
+    y+=5;
+    corazon.style.top=y+"px";
+
+    if(y>window.innerHeight){
+        clearInterval(bajar);
+        corazon.remove();
+    }
+},20);
+```
+
+},200);
+
 }
 
 const botonNo = document.getElementById("no");
